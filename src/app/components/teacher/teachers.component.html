@@ -1,0 +1,21 @@
+
+
+
+<h2>{{title}}</h2>
+<div class="container">
+  <div class="row justify-content-center align-items-center mb-5">
+    <div class="col-md-4" *ngFor="let teacher of teachers">
+        <div class="card" style="width: 18rem;">
+            <!-- <img src="{{ teacher.image }}" class="card-img-top" alt="{{ teacher.subject }}"> -->
+            <div class="card-body">
+            <h3 class="card-title">{{ teacher.id }}</h3>
+            <h5 class="card-title">{{ teacher.subject }}</h5>
+            <!-- <p class="card-text">{{ teacher.details }}</p> -->
+            <a href="#" class="btn btn-primary">View Profile</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+

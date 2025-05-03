@@ -1,0 +1,75 @@
+
+<app-nav></app-nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center bg-primary text-white">
+                    <h3>Register</h3>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" [(ngModel)]="user.userName" name="userName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" name="firstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" [(ngModel)]="user.city" name="city">
+                        </div>
+                        <div class="mb-3">
+                            <label for="parentName" class="form-label">Parent Name</label>
+                            <input type="text" class="form-control" id="parentName" [(ngModel)]="user.parentName" name="parentName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="parentPhone" class="form-label">Parent Phone</label>
+                            <input type="text" class="form-control" id="parentPhone" [(ngModel)]="user.parentPhone" name="parentPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="parentMail" class="form-label">Parent Email</label>
+                            <input type="email" class="form-control" id="parentMail" [(ngModel)]="user.parentMail" name="parentMail" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="registrationMessage" class="alert alert-success">
+    {{ registrationMessage }}
+  </div>
+  
+  <div *ngIf="registrationError" class="alert alert-danger">
+    {{ registrationError }}
+  </div>
+  
+  
